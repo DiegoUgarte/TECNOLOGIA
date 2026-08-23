@@ -1112,10 +1112,6 @@ function eliminarContenido(id) {
     mostrarListaContenidos();
 
 }
-
-    mostrarListaContenidos();
-
-}
 function administrarMateriales() {
 
     document.getElementById("contenido").innerHTML = `
