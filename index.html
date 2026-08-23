@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistemas Informáticos - BTH Sararenda</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            <img src="logo.png" width="90px">
+        </div>
+
+        <div class="titulo">
+            <h1>Sistemas Informáticos</h1>
+            <p>BTH Sararenda</p>
+        </div>
+
+        <button id="modoOscuro" class="boton-icono">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         MENÚ
+    ========================== -->
+
+    <nav>
+
+        <button onclick="mostrarInicio()">
+            🏠 Inicio
+        </button>
+
+        <button onclick="mostrarCurso(4)">
+            4.º Secundaria
+        </button>
+
+        <button onclick="mostrarCurso(5)">
+            5.º Secundaria
+        </button>
+
+        <button onclick="mostrarRecursos()">
+            📚 Recursos
+        </button>
+        <button onclick="mostrarPanelDocente()">
+    👨‍🏫 Panel docente
+</button>
+
+    </nav>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+
+    <main id="contenido">
+
+        <!-- INICIO -->
+
+        <section class="inicio">
+
+            <div class="hero">
+
+                <div>
+
+                    <span class="etiqueta">
+                        EDUCACIÓN TÉCNICA
+                    </span>
+
+                    <h2>
+                        Bienvenidos a su plataforma de Sistemas Informáticos
+                    </h2>
+
+                    <p>
+                        Espacio virtual donde encontraremos 
+                        todo lo relacionado con nuestra carrera
+                    </p>
+
+                    <button
+                        class="boton-principal"
+                        onclick="mostrarCurso(5)">
+                        Comenzar a aprender 🚀
+                    </button>
+
+                </div>
+
+                <div class="hero-icon">
+                    💻
+                </div>
+
+            </div>
+
+
+            <h2 class="titulo-seccion">
+                Mis cursos
+            </h2>
+
+
+            <div class="cursos">
+
+                <div
+                    class="curso-card curso4"
+                    onclick="mostrarCurso(4)">
+
+                    <div class="curso-numero">
+                        4.º
+                    </div>
+
+                    <h3>
+                        Cuarto de Secundaria
+                    </h3>
+
+                    <p>
+                        Fundamentos y herramientas
+                        de Sistemas Informáticos.
+                    </p>
+
+                    <button>
+                        Ver contenidos →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="curso-card curso5"
+                    onclick="mostrarCurso(5)">
+
+                    <div class="curso-numero">
+                        5.º
+                    </div>
+
+                    <h3>
+                        Quinto de Secundaria
+                    </h3>
+
+                    <p>
+                        Programación, Python y
+                        desarrollo web.
+                    </p>
+
+                    <button>
+                        Ver contenidos →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="mensaje">
+
+                <h3>🎯 Nuestro objetivo</h3>
+
+                <p>
+                    Aprender informática no significa
+                    solamente memorizar conceptos.
+                    Significa aprender a resolver problemas,
+                    crear soluciones y utilizar la tecnología
+                    de manera responsable.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Sistemas Informáticos -
+            BTH Sararenda
+        </p>
+
+        <p>
+            Aprender • Crear • Innovar
+        </p>
+        <p>
+            AppWeb desarrollada por: Lic. Luis Diego Ugarte Vedia
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

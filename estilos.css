@@ -1,0 +1,1014 @@
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --principal: #2563eb;
+    --principal-oscuro: #1d4ed8;
+
+    --secundario: #7c3aed;
+
+    --fondo: #f4f7fb;
+
+    --blanco: #ffffff;
+
+    --texto: #1e293b;
+
+    --texto-suave: #64748b;
+
+    --borde: #e2e8f0;
+
+    --exito: #16a34a;
+
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--fondo);
+
+    color: var(--texto);
+
+    min-height: 100vh;
+
+    transition: 0.3s;
+
+}
+
+
+/* =====================================
+   ENCABEZADO
+===================================== */
+
+header {
+
+    background: var(--blanco);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 7%;
+
+    border-bottom: 1px solid var(--borde);
+
+}
+
+
+.logo {
+
+    width: 50px;
+
+    height: 50px;
+
+    background: var(--principal);
+
+    color: white;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+}
+
+
+.titulo {
+
+    flex: 1;
+
+}
+
+
+.titulo h1 {
+
+    font-size: 21px;
+
+}
+
+
+.titulo p {
+
+    color: var(--texto-suave);
+
+    font-size: 14px;
+
+}
+
+
+.boton-icono {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================
+   MENÚ
+===================================== */
+
+nav {
+
+    background: var(--blanco);
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border-bottom: 1px solid var(--borde);
+
+}
+
+
+nav button {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: var(--texto);
+
+}
+
+
+nav button:hover {
+
+    background: #eff6ff;
+
+    color: var(--principal);
+
+}
+
+
+/* =====================================
+   CONTENIDO
+===================================== */
+
+main {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+
+}
+
+
+.hero h2 {
+
+    font-size: 38px;
+
+    margin: 15px 0;
+
+}
+
+
+.hero p {
+
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+}
+
+
+.hero-icon {
+
+    font-size: 100px;
+
+}
+
+
+.etiqueta {
+
+    background: rgba(255,255,255,.2);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.boton-principal {
+
+    margin-top: 25px;
+
+    background: white;
+
+    color: var(--principal);
+
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.boton-principal:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================
+   TÍTULOS
+===================================== */
+
+.titulo-seccion {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =====================================
+   CURSOS
+===================================== */
+
+.cursos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.curso-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    border: 1px solid var(--borde);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.curso-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.08);
+
+}
+
+
+.curso-numero {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: var(--principal);
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+
+.curso-card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.curso-card p {
+
+    color: var(--texto-suave);
+
+    line-height: 1.5;
+
+}
+
+
+.curso-card button {
+
+    margin-top: 20px;
+
+    background: none;
+
+    border: none;
+
+    color: var(--principal);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================
+   MENSAJE
+===================================== */
+
+.mensaje {
+
+    margin-top: 40px;
+
+    background: white;
+
+    border-left: 5px solid var(--principal);
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+}
+
+
+.mensaje h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.mensaje p {
+
+    color: var(--texto-suave);
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================
+   PÁGINA DE CURSO
+===================================== */
+
+.encabezado-curso {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.encabezado-curso h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.encabezado-curso p {
+
+    color: var(--texto-suave);
+
+}
+
+
+/* =====================================
+   TEMAS
+===================================== */
+
+.temas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.tema {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--borde);
+
+}
+
+
+.tema-numero {
+
+    color: var(--principal);
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.tema h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.tema p {
+
+    color: var(--texto-suave);
+
+    line-height: 1.5;
+
+}
+
+
+.tema button {
+
+    margin-top: 18px;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    background: var(--principal);
+
+    color: white;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================
+   DETALLE DEL TEMA
+===================================== */
+
+.detalle {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+}
+
+
+.detalle h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.detalle h3 {
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.detalle p {
+
+    line-height: 1.7;
+
+    color: var(--texto-suave);
+
+}
+
+
+.detalle ul {
+
+    margin-left: 25px;
+
+    line-height: 1.8;
+
+}
+
+
+.codigo {
+
+    background: #111827;
+
+    color: #e5e7eb;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-top: 15px;
+
+    overflow-x: auto;
+
+    font-family: Consolas, monospace;
+
+}
+
+
+/* =====================================
+   ACTIVIDADES
+===================================== */
+
+.actividad {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--borde);
+
+}
+
+
+.actividad button {
+
+    background: var(--exito);
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+.completada {
+
+    border-left: 5px solid var(--exito);
+
+}
+
+
+/* =====================================
+   RECURSOS
+===================================== */
+
+.recursos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.recurso {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--borde);
+
+}
+
+
+.recurso a {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: var(--principal);
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+
+}
+
+
+footer p {
+
+    margin: 5px;
+
+    opacity: .8;
+
+}
+
+
+/* =====================================
+   MODO OSCURO
+===================================== */
+
+body.oscuro {
+
+    --fondo: #0f172a;
+
+    --blanco: #1e293b;
+
+    --texto: #f1f5f9;
+
+    --texto-suave: #cbd5e1;
+
+    --borde: #334155;
+
+}
+
+
+body.oscuro .tema,
+body.oscuro .curso-card,
+body.oscuro .detalle,
+body.oscuro .encabezado-curso,
+body.oscuro .mensaje,
+body.oscuro .recurso,
+body.oscuro .actividad {
+
+    background: #1e293b;
+
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 800px) {
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .hero h2 {
+
+        font-size: 30px;
+
+    }
+
+    .hero-icon {
+
+        margin-top: 20px;
+
+    }
+
+    .cursos,
+    .temas,
+    .recursos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    nav {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    main {
+
+        padding: 20px 12px;
+
+    }
+
+    .hero {
+
+        padding: 30px 20px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 26px;
+
+    }
+
+    header {
+
+        padding: 12px;
+
+    }
+
+}
+/* =====================================
+   PANEL DOCENTE
+===================================== */
+
+.panel-docente {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--borde);
+}
+
+.panel-titulo {
+    margin-bottom: 25px;
+}
+
+.panel-titulo h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.panel-titulo p {
+    color: var(--texto-suave);
+}
+
+
+/* TARJETAS DE ESTADÍSTICAS */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.estadistica {
+    padding: 20px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid var(--borde);
+}
+
+.estadistica .numero {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--principal);
+}
+
+.estadistica p {
+    color: var(--texto-suave);
+}
+
+
+/* FORMULARIO */
+
+.formulario-docente {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.formulario-docente h3 {
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.boton-guardar {
+    background: var(--principal);
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.boton-guardar:hover {
+    background: var(--principal-oscuro);
+}
+
+
+/* LISTA DE CONTENIDOS */
+
+.lista-contenidos {
+    display: grid;
+    gap: 15px;
+}
+
+.contenido-docente {
+    background: white;
+    border: 1px solid var(--borde);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.contenido-docente h4 {
+    margin-bottom: 8px;
+}
+
+.contenido-docente .curso {
+    display: inline-block;
+    background: #eff6ff;
+    color: var(--principal);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.acciones-contenido {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.boton-eliminar {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.boton-ver {
+    background: var(--principal);
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+}
