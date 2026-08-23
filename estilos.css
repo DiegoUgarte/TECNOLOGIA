@@ -1043,3 +1043,230 @@ body.oscuro .actividad {
     transform: translateY(-2px);
 
 }
+/* =====================================
+   ACCESO DOCENTE
+===================================== */
+
+.acceso-docente {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 500px;
+
+}
+
+
+.login-docente {
+
+    width: 350px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+}
+
+
+.icono-docente {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.login-docente h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.login-docente p {
+
+    color: #666;
+
+}
+
+
+.login-docente input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 20px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+}
+
+
+.login-docente button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+/* =====================================
+   ADMINISTRACIÓN DOCENTE
+===================================== */
+
+.administracion {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px;
+}
+
+.formulario-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.formulario-admin input,
+.formulario-admin select,
+.formulario-admin textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.formulario-admin textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.formulario-admin button,
+.administracion > button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.item-admin {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.item-admin strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.item-admin span {
+    font-size: 14px;
+    color: #666;
+}
+
+.item-admin button {
+    margin-top: 10px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* =====================================
+   ADMINISTRACIÓN DOCENTE
+===================================== */
+
+.administracion {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px;
+}
+
+.formulario-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.formulario-admin input,
+.formulario-admin select,
+.formulario-admin textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.formulario-admin textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.formulario-admin button,
+.administracion > button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.item-admin {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.item-admin strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.item-admin span {
+    font-size: 14px;
+    color: #666;
+}
+
+.item-admin button {
+    margin-top: 10px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

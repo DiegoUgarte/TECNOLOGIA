@@ -758,248 +758,39 @@ function guardarContenidosDocente(contenidos) {
 
 function mostrarPanelDocente() {
 
-    const contenidos =
-        obtenerContenidosDocente();
+    const contenido = document.getElementById("contenido");
 
+    contenido.innerHTML = `
 
-    document.getElementById("contenido").innerHTML = `
+        <section class="acceso-docente">
 
-        <section class="panel-docente">
+            <div class="login-docente">
 
-            <div class="panel-titulo">
+                <div class="icono-docente">
+                    👨‍🏫
+                </div>
 
                 <h2>
-                    👨‍🏫 Panel Docente
+                    Acceso docente
                 </h2>
 
                 <p>
-                    Administra los contenidos y actividades
-                    de tus estudiantes.
+                    Esta sección está restringida
+                    al docente.
                 </p>
 
-            </div>
+                <input
+                    type="password"
+                    id="passwordDocente"
+                    placeholder="Ingrese la contraseña"
+                    onkeydown="if(event.key === 'Enter') verificarDocente()"
+                >
 
-
-            <!-- ESTADÍSTICAS -->
-
-            <div class="estadisticas">
-
-                <div class="estadistica">
-
-                    <div class="numero">
-                        ${contenidos.length}
-                    </div>
-
-                    <p>
-                        Contenidos creados
-                    </p>
-
-                </div>
-
-
-                <div class="estadistica">
-
-                    <div class="numero">
-                        ${cursos[4].temas.length}
-                    </div>
-
-                    <p>
-                        Temas de 4.º
-                    </p>
-
-                </div>
-
-
-                <div class="estadistica">
-
-                    <div class="numero">
-                        ${cursos[5].temas.length}
-                    </div>
-
-                    <p>
-                        Temas de 5.º
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- FORMULARIO -->
-
-            <div class="formulario-docente">
-
-                <h3>
-                    ➕ Agregar nuevo contenido
-                </h3>
-
-
-                <div class="campo">
-
-                    <label>
-                        Curso
-                    </label>
-
-                    <select id="cursoNuevo">
-
-                        <option value="4">
-                            4.º de Secundaria
-                        </option>
-
-                        <option value="5">
-                            5.º de Secundaria
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="campo">
-
-                    <label>
-                        Título del contenido
-                    </label>
-
-                    <input
-                        type="text"
-                        id="tituloNuevo"
-                        placeholder="Ej.: Introducción a JavaScript">
-
-                </div>
-
-
-                <div class="campo">
-
-                    <label>
-                        Descripción
-                    </label>
-
-                    <input
-                        type="text"
-                        id="descripcionNuevo"
-                        placeholder="Descripción breve del tema">
-
-                </div>
-
-
-                <div class="campo">
-
-                    <label>
-                        Contenido / teoría
-                    </label>
-
-                    <textarea
-                        id="teoriaNueva"
-                        placeholder="Escribe aquí la teoría del tema..."></textarea>
-
-                </div>
-
-
-                <div class="campo">
-
-                    <label>
-                        Actividad práctica
-                    </label>
-
-                    <textarea
-                        id="actividadNueva"
-                        placeholder="Escribe aquí la actividad para los estudiantes..."></textarea>
-
-                </div>
-
-
-                <button
-                    class="boton-guardar"
-                    onclick="agregarContenido()">
-
-                    💾 Guardar contenido
-
+                <button onclick="verificarDocente()">
+                    🔐 Entrar
                 </button>
 
-            </div>
-
-
-            <!-- CONTENIDOS CREADOS -->
-
-            <h3>
-                📚 Mis contenidos
-            </h3>
-
-            <br>
-
-            <div class="lista-contenidos">
-
-                ${
-                    contenidos.length === 0
-
-                    ?
-
-                    `
-                    <div class="contenido-docente">
-
-                        <p>
-                            Todavía no has creado contenidos
-                            desde el panel docente.
-                        </p>
-
-                    </div>
-                    `
-
-                    :
-
-                    contenidos.map(
-                        (contenido, indice) => `
-
-                        <div class="contenido-docente">
-
-                            <span class="curso">
-
-                                ${
-                                    contenido.curso == 4
-                                    ? "4.º SECUNDARIA"
-                                    : "5.º SECUNDARIA"
-
-                                }
-
-                            </span>
-
-                            <h4>
-                                ${contenido.titulo}
-                            </h4>
-
-                            <p>
-                                ${contenido.descripcion}
-                            </p>
-
-
-                            <div class="acciones-contenido">
-
-                                <button
-                                    class="boton-ver"
-                                    onclick="verContenidoDocente(${indice})">
-
-                                    👁 Ver
-
-                                </button>
-
-
-                                <button
-                                    class="boton-eliminar"
-                                    onclick="eliminarContenido(${indice})">
-
-                                    🗑 Eliminar
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    `
-                    ).join("")
-
-                }
+                <p id="mensajeAcceso"></p>
 
             </div>
 
@@ -1008,7 +799,710 @@ function mostrarPanelDocente() {
     `;
 
 }
+function verificarDocente() {
 
+    const password =
+        document.getElementById("passwordDocente").value;
+
+    const mensaje =
+        document.getElementById("mensajeAcceso");
+
+
+    // CAMBIA ESTA CONTRASEÑA
+    const passwordCorrecta = "Sistemas2026";
+
+
+    if (password === passwordCorrecta) {
+
+        mostrarPanelPrivado();
+
+    } else {
+
+        mensaje.innerHTML =
+            "❌ Contraseña incorrecta.";
+
+        mensaje.style.color = "red";
+
+    }
+
+}
+function mostrarPanelPrivado() {
+
+    document.getElementById("contenido").innerHTML = `
+
+        <section class="panel-docente">
+
+            <h2>👨‍🏫 Panel Docente</h2>
+
+            <p>
+                Bienvenido al área de administración
+                de la plataforma.
+            </p>
+
+            <div class="panel-opciones">
+
+                <div class="opcion-docente">
+
+                    <h3>📚 Contenidos</h3>
+
+                    <p>
+                        Gestiona los contenidos de 4.º y 5.º
+                        de secundaria.
+                    </p>
+
+                    <button onclick="administrarContenidos()">
+                        📚 Administrar contenidos
+                    </button>
+
+                </div>
+
+
+                <div class="opcion-docente">
+
+                    <h3>📎 Materiales</h3>
+
+                    <p>
+                        Gestiona los materiales disponibles
+                        para los estudiantes.
+                    </p>
+
+                    <button onclick="administrarMateriales()">
+                        📎 Administrar materiales
+                    </button>
+
+                </div>
+
+
+                <div class="opcion-docente">
+
+                    <h3>📝 Actividades</h3>
+
+                    <p>
+                        Crea y organiza actividades
+                        para los estudiantes.
+                    </p>
+
+                    <button onclick="administrarActividades()">
+                        📝 Administrar actividades
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
+
+}
+function administrarContenidos() {
+
+    document.getElementById("contenido").innerHTML = `
+
+        <section class="administracion">
+
+            <button onclick="mostrarPanelPrivado()">
+                ← Volver al panel
+            </button>
+
+            <h2>📚 Administrar contenidos</h2>
+
+            <div class="formulario-admin">
+
+                <label>Curso:</label>
+
+                <select id="cursoContenido">
+
+                    <option value="4">
+                        4.º Secundaria
+                    </option>
+
+                    <option value="5">
+                        5.º Secundaria
+                    </option>
+
+                </select>
+
+
+                <label>Título:</label>
+
+                <input
+                    type="text"
+                    id="tituloContenido"
+                    placeholder="Ej: Programación Estructurada"
+                >
+
+
+                <label>Descripción:</label>
+
+                <textarea
+                    id="descripcionContenido"
+                    placeholder="Descripción del contenido..."
+                ></textarea>
+
+
+                <button onclick="guardarContenido()">
+                    💾 Guardar contenido
+                </button>
+
+            </div>
+
+
+            <div id="listaContenidos">
+
+            </div>
+
+        </section>
+
+    `;
+
+    mostrarListaContenidos();
+
+}
+function guardarContenido() {
+
+    const curso =
+        document.getElementById("cursoContenido").value;
+
+    const titulo =
+        document.getElementById("tituloContenido").value;
+
+    const descripcion =
+        document.getElementById("descripcionContenido").value;
+
+
+    if (!titulo || !descripcion) {
+
+        alert("Completa todos los campos.");
+
+        return;
+
+    }
+
+
+    let contenidos =
+        JSON.parse(
+            localStorage.getItem("contenidos")
+        ) || [];
+
+
+    contenidos.push({
+
+        id: Date.now(),
+
+        curso: curso,
+
+        titulo: titulo,
+
+        descripcion: descripcion
+
+    });
+
+
+    localStorage.setItem(
+        "contenidos",
+        JSON.stringify(contenidos)
+    );
+
+
+    alert("Contenido guardado correctamente.");
+
+
+    document.getElementById(
+        "tituloContenido"
+    ).value = "";
+
+    document.getElementById(
+        "descripcionContenido"
+    ).value = "";
+
+
+    mostrarListaContenidos();
+
+}
+function mostrarListaContenidos() {
+
+    const contenedor =
+        document.getElementById("listaContenidos");
+
+    if (!contenedor) {
+        return;
+    }
+
+    let contenidos = JSON.parse(
+        localStorage.getItem("contenidos")
+    ) || [];
+
+    if (contenidos.length === 0) {
+
+        contenedor.innerHTML = `
+            <p>
+                No hay contenidos registrados.
+            </p>
+        `;
+
+        return;
+    }
+
+    contenedor.innerHTML = "";
+
+    contenidos.forEach(function(c) {
+
+        const elemento = document.createElement("div");
+
+        elemento.className = "item-admin";
+
+        elemento.innerHTML = `
+
+            <strong>
+                ${c.titulo}
+            </strong>
+
+            <span>
+                ${c.curso}.º Secundaria
+            </span>
+
+            <p>
+                ${c.descripcion}
+            </p>
+
+            <button type="button">
+                🗑️ Eliminar
+            </button>
+
+        `;
+
+        const boton = elemento.querySelector("button");
+
+        boton.addEventListener("click", function(event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            eliminarContenido(c.id);
+
+        });
+
+        contenedor.appendChild(elemento);
+
+    });
+
+}
+function eliminarContenido(id) {
+
+    console.log("ID recibido:", id);
+
+    let contenidos = JSON.parse(
+        localStorage.getItem("contenidos")
+    ) || [];
+
+    console.log("Antes de eliminar:", contenidos);
+
+    contenidos = contenidos.filter(function(contenido) {
+        return String(contenido.id) !== String(id);
+    });
+
+    localStorage.setItem(
+        "contenidos",
+        JSON.stringify(contenidos)
+    );
+
+    console.log("Después de eliminar:", contenidos);
+
+    mostrarListaContenidos();
+
+}
+
+    mostrarListaContenidos();
+
+}
+function administrarMateriales() {
+
+    document.getElementById("contenido").innerHTML = `
+
+        <section class="administracion">
+
+            <button onclick="mostrarPanelPrivado()">
+                ← Volver al panel
+            </button>
+
+            <h2>📎 Administrar materiales</h2>
+
+            <div class="formulario-admin">
+
+                <label>Curso:</label>
+
+                <select id="cursoMaterial">
+
+                    <option value="4">
+                        4.º Secundaria
+                    </option>
+
+                    <option value="5">
+                        5.º Secundaria
+                    </option>
+
+                </select>
+
+
+                <label>Nombre del material:</label>
+
+                <input
+                    type="text"
+                    id="nombreMaterial"
+                    placeholder="Ej: Ejercicios de Python"
+                >
+
+
+                <label>Ruta del archivo:</label>
+
+                <input
+                    type="text"
+                    id="archivoMaterial"
+                    placeholder="materiales/5to/python/ejercicios.pdf"
+                >
+
+
+                <button onclick="guardarMaterial()">
+
+                    💾 Guardar material
+
+                </button>
+
+            </div>
+
+
+            <div id="listaMateriales">
+
+            </div>
+
+        </section>
+
+    `;
+
+    mostrarListaMateriales();
+
+}
+function guardarMaterial() {
+
+    const curso =
+        document.getElementById("cursoMaterial").value;
+
+    const nombre =
+        document.getElementById("nombreMaterial").value;
+
+    const archivo =
+        document.getElementById("archivoMaterial").value;
+
+
+    if (!nombre || !archivo) {
+
+        alert("Completa todos los campos.");
+
+        return;
+
+    }
+
+
+    let materialesGuardados =
+        JSON.parse(
+            localStorage.getItem("materiales")
+        ) || [];
+
+
+    materialesGuardados.push({
+
+        id: Date.now(),
+
+        curso: curso,
+
+        nombre: nombre,
+
+        archivo: archivo
+
+    });
+
+
+    localStorage.setItem(
+        "materiales",
+        JSON.stringify(materialesGuardados)
+    );
+
+
+    alert("Material guardado correctamente.");
+
+    mostrarListaMateriales();
+
+}
+function mostrarListaMateriales() {
+
+    const contenedor =
+        document.getElementById("listaMateriales");
+
+    if (!contenedor) return;
+
+
+    let materialesGuardados =
+        JSON.parse(
+            localStorage.getItem("materiales")
+        ) || [];
+
+
+    if (materialesGuardados.length === 0) {
+
+        contenedor.innerHTML =
+            "<p>No hay materiales registrados.</p>";
+
+        return;
+
+    }
+
+
+    contenedor.innerHTML =
+        materialesGuardados.map(m => `
+
+            <div class="item-admin">
+
+                <strong>
+                    ${m.nombre}
+                </strong>
+
+                <span>
+                    ${m.curso}.º Secundaria
+                </span>
+
+                <p>
+                    ${m.archivo}
+                </p>
+
+                <button
+                    onclick="eliminarMaterial(${m.id})">
+
+                    🗑️ Eliminar
+
+                </button>
+
+            </div>
+
+        `).join("");
+
+}
+function eliminarMaterial(id) {
+
+    let materialesGuardados =
+        JSON.parse(
+            localStorage.getItem("materiales")
+        ) || [];
+
+
+    materialesGuardados =
+        materialesGuardados.filter(
+            m => m.id !== id
+        );
+
+
+    localStorage.setItem(
+        "materiales",
+        JSON.stringify(materialesGuardados)
+    );
+
+
+    mostrarListaMateriales();
+
+}
+function administrarActividades() {
+
+    document.getElementById("contenido").innerHTML = `
+
+        <section class="administracion">
+
+            <button onclick="mostrarPanelPrivado()">
+                ← Volver al panel
+            </button>
+
+            <h2>📝 Administrar actividades</h2>
+
+            <div class="formulario-admin">
+
+                <label>Curso:</label>
+
+                <select id="cursoActividad">
+
+                    <option value="4">
+                        4.º Secundaria
+                    </option>
+
+                    <option value="5">
+                        5.º Secundaria
+                    </option>
+
+                </select>
+
+
+                <label>Título:</label>
+
+                <input
+                    type="text"
+                    id="tituloActividad"
+                    placeholder="Ej: Ejercicio de Python"
+                >
+
+
+                <label>Descripción:</label>
+
+                <textarea
+                    id="descripcionActividad"
+                    placeholder="Escribe las instrucciones..."
+                ></textarea>
+
+
+                <button onclick="guardarActividad()">
+
+                    💾 Guardar actividad
+
+                </button>
+
+            </div>
+
+
+            <div id="listaActividades">
+
+            </div>
+
+        </section>
+
+    `;
+
+    mostrarListaActividades();
+
+}
+function guardarActividad() {
+
+    const curso =
+        document.getElementById("cursoActividad").value;
+
+    const titulo =
+        document.getElementById("tituloActividad").value;
+
+    const descripcion =
+        document.getElementById("descripcionActividad").value;
+
+
+    if (!titulo || !descripcion) {
+
+        alert("Completa todos los campos.");
+
+        return;
+
+    }
+
+
+    let actividades =
+        JSON.parse(
+            localStorage.getItem("actividades")
+        ) || [];
+
+
+    actividades.push({
+
+        id: Date.now(),
+
+        curso: curso,
+
+        titulo: titulo,
+
+        descripcion: descripcion
+
+    });
+
+
+    localStorage.setItem(
+        "actividades",
+        JSON.stringify(actividades)
+    );
+
+
+    alert("Actividad guardada correctamente.");
+
+    mostrarListaActividades();
+
+}
+function mostrarListaActividades() {
+
+    const contenedor =
+        document.getElementById("listaActividades");
+
+    if (!contenedor) return;
+
+
+    let actividades =
+        JSON.parse(
+            localStorage.getItem("actividades")
+        ) || [];
+
+
+    if (actividades.length === 0) {
+
+        contenedor.innerHTML =
+            "<p>No hay actividades registradas.</p>";
+
+        return;
+
+    }
+
+
+    contenedor.innerHTML =
+        actividades.map(a => `
+
+            <div class="item-admin">
+
+                <strong>
+                    ${a.titulo}
+                </strong>
+
+                <span>
+                    ${a.curso}.º Secundaria
+                </span>
+
+                <p>
+                    ${a.descripcion}
+                </p>
+
+                <button
+                    onclick="eliminarActividad(${a.id})">
+
+                    🗑️ Eliminar
+
+                </button>
+
+            </div>
+
+        `).join("");
+
+}
+function eliminarActividad(id) {
+
+    let actividades =
+        JSON.parse(
+            localStorage.getItem("actividades")
+        ) || [];
+
+
+    actividades =
+        actividades.filter(
+            a => a.id !== id
+        );
+
+
+    localStorage.setItem(
+        "actividades",
+        JSON.stringify(actividades)
+    );
+
+
+    mostrarListaActividades();
+
+}
 
 /* ==========================================
    AGREGAR CONTENIDO
