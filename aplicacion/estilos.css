@@ -1012,3 +1012,34 @@ body.oscuro .actividad {
     }
 
 }
+/* =====================================
+   BOTÓN DESCARGAR
+===================================== */
+
+.boton-descarga {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 10px 15px;
+
+    background: var(--principal);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+}
+
+.boton-descarga:hover {
+
+    background: var(--principal-oscuro);
+
+    transform: translateY(-2px);
+
+}

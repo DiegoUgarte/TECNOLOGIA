@@ -1232,3 +1232,92 @@ function eliminarContenido(indice) {
     mostrarPanelDocente();
 
 }
+/* ==========================================
+   MATERIALES
+========================================== */
+
+function mostrarMateriales() {
+
+    let html = `
+
+        <section>
+
+            <div class="encabezado-curso">
+
+                <h2>
+                    📎 Materiales de estudio
+                </h2>
+
+                <p>
+                    Descarga los materiales correspondientes
+                    a tu curso.
+                </p>
+
+            </div>
+
+            <div class="temas">
+    `;
+
+
+    materiales.forEach(material => {
+
+        html += `
+
+            <article class="tema">
+
+                <div class="tema-numero">
+
+                    ${
+                        material.curso == 4
+                        ? "4.º SECUNDARIA"
+                        : "5.º SECUNDARIA"
+                    }
+
+                </div>
+
+                <h3>
+                    📄 ${material.nombre}
+                </h3>
+
+                <p>
+                    ${material.descripcion}
+                </p>
+
+                <p>
+                    <strong>
+                        Categoría:
+                    </strong>
+
+                    ${material.categoria}
+                </p>
+
+                <a
+                    href="${material.archivo}"
+                    download
+                    class="boton-descarga">
+
+                    ⬇ Descargar material
+
+                </a>
+
+            </article>
+
+        `;
+
+    });
+
+
+    html += `
+
+            </div>
+
+        </section>
+
+    `;
+
+
+    document.getElementById(
+        "contenido"
+    ).innerHTML = html;
+
+}

@@ -6,7 +6,7 @@ const materiales = [
         categoria: "Python",
         nombre: "Guía de Introducción a Python",
         descripcion: "Material de apoyo para la primera clase.",
-        archivo: "materiales/5to/python/guia-python.pdf"
+        archivo: "materiales/5to/python/ejercicios.pdf"
     },
 
     {
